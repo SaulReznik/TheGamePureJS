@@ -1,0 +1,32 @@
+body {
+  background-color: #3AE2CE;
+  font-family: "Courier New", Courier, monospace;
+
+}
+
+#mainConteiner {
+
+  margin-top: 800px;
+  margin-left: 1600px;
+  height: 300px;
+  width: 1150px;
+  align-items: center;
+  justify-content: center;
+}
+
+input {
+  margin: 10px;
+  font-size: 75px;
+  font-family: "Courier New", Courier, monospace;
+  background-color: #3AE2CE;
+  border: solid #00B5A0 1px;
+}
+
+#result {
+
+}
+
+#count {
+  text-align: center;
+  margin: 0 0 0 350px;
+}

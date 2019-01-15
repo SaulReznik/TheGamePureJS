@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>The Game</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <div id="mainConteiner">
+      <input id="player" type="text"  >
+      <input id="result"  type="text" value="1" readonly>
+      <input id="bot" type="text" value="1" readonly>
+      <input id="count" type="button" onclick="setTimeout(winningStrategy, 300); setTimeout(showresult, 300)"  value="Count">
+    </div>
+    <script type="text/javascript">
+
+
+    let clicks = 0;
+    let result = 1;
+
+    //showresult-ov klikery hashvuma u xaxacoxi u bot ardyunqnery gumarum enq irar
+    function showresult() {
+        if (player.value >= 1 && player.value <= 10) {
+
+      let player = parseFloat(document.getElementById('player').value);
+      let bot = parseFloat(document.getElementById('bot').value);
+
+      function clickCount () {
+        clicks = clicks + 1;
+        console.log(clicks);
+      };
+
+      clickCount();
+      //arajin kliki jamanak uxaki player-y u bot-y gumaruma irar,2rdic sksac arden resultnela gumarum
+      if (clicks <= 1) {
+          result = player + bot + 1;
+      } else if (clicks > 1) {
+        result = result + player + bot
+      };
+
+      document.getElementById('result').value = result;
+    } else {
+      alert(false);
+    }
+};
+      //bot-um taqnvaca es xaxi gaxtniqy ;)
+      function winningStrategy () {
+
+        bot.value = 11 - player.value
+
+      }
+    </script>
+  </body>
+</html>

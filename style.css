@@ -19,8 +19,15 @@ input {
   border: solid #00B5A0 1px;
 }
 
-#result {
+.myInputsContainers {
+  display: flex;
+  flex-direction: row;
+}
 
+.myInputs {
+  font-size: 25px;
+  width:50px;
+  border: none;
 }
 
 #count {

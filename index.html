@@ -7,9 +7,15 @@
   </head>
   <body>
     <div class="mainConteiner">
-      <input id="player" type="text"  >
-      <input id="result"  type="text" value="1" readonly>
-      <input id="bot" type="text" value="1" readonly>
+      <input id="player" type="text" placeholder="Input here" onfocus="this.value = ''" >
+      <div class="myInputsContainers">
+        <h1>Result:</h1>
+        <input class="myInputs" id="result"  type="text" value="1" readonly>
+      </div>
+      <div class="myInputsContainers">
+        <h2>Bot:</h2>
+        <input class="myInputs" id="bot" type="text" value="1" readonly>
+      </div>
       <input id="count" type="button" onclick="setTimeout(winningStrategy, 300); setTimeout(showresult, 300)"  value="Count">
     </div>
     <script type="text/javascript">
@@ -35,8 +41,14 @@
       if (clicks <= 1) {
           result = player + bot + 1;
       } else if (clicks > 1) {
-        result = result + player + bot
-      };
+        result = result + player + bot;
+      }
+
+
+
+      if (result >= 100) {
+        alert('You Lose');
+      }
 
       document.getElementById('result').value = result;
     } else {
@@ -45,6 +57,10 @@
 };
       //bot-um taqnvaca es xaxi gaxtniqy ;)
       function winningStrategy () {
+
+        if (player < 1 && player > 10) {
+          throw 'choose number beetwen 1 and 10'
+        }
 
         bot.value = 11 - player.value
 

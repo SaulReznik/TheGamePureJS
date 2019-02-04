@@ -1,7 +1,9 @@
 body {
   background-color: #3AE2CE;
   font-family: "Courier New", Courier, monospace;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .mainConteiner {

@@ -6,7 +6,10 @@
   </head>
   <body>
     <div class="mainConteiner">
-      <input id="player" type="text" placeholder="Input here" onfocus="this.value = ''" >
+      <div id="playerInputContainer">
+        <h2>Player :</h2>
+        <input id="player" type="text" placeholder="Input here" onfocus="this.value = ''" >
+      </div>
       <div class="myInputsContainers">
         <h1>Result:</h1>
         <input class="myInputs" id="result"  type="text" value="1" readonly>
@@ -19,11 +22,9 @@
     </div>
     <script type="text/javascript">
 
-
     let clicks = 0;
     let result = 1;
 
-    //showresult-ov klikery hashvuma u xaxacoxi u bot ardyunqnery gumarum enq irar
     function showresult() {
         if (player.value >= 1 && player.value <= 10) {
 
@@ -36,16 +37,15 @@
       };
 
       clickCount();
-      //arajin kliki jamanak uxaki player-y u bot-y gumaruma irar,2rdic sksac arden resultnela gumarum
+      //In first click showResult() just add to result the value of bot and player
+      //After that it adds the result too
       if (clicks <= 1) {
         result = player + bot + 1;
       } else if (clicks > 1) {
         result = result + player + bot;
       }
 
-
-
-      if (result >= 100) {
+    if (result >= 100) {
         alert('And Bot says ' + bot + ' You Lose');
         confirm('Start Again?');
         document.getElementById('player').value = 0;
@@ -54,15 +54,13 @@
       }
 
       document.getElementById('result').value = result;
-    } else {
-      alert(false);
-    }
-};
-      //bot-um taqnvaca es xaxi gaxtniqy ;)
+      } else {
+        alert(false);
+      }
+    };
+
       function winningStrategy () {
-
         bot.value = 11 - player.value
-
       }
     </script>
   </body>

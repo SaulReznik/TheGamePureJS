@@ -21,6 +21,11 @@ input {
   border: solid #00B5A0 1px;
 }
 
+#playerInputContainer {
+  display: flex;
+  flex-direction: row;
+}
+
 .myInputsContainers {
   display: flex;
   flex-direction: row;
